@@ -6,13 +6,21 @@ public class MD2_08_11_18 {
     public static int buscaUnicoAux(int[] cad, int i0, int iN){
         // Divide
         int k = (i0+iN)/2;
-        // If you found the unique number in the array return it and that's all
-        if(cad[k]!=cad[(k-1)%cad.length+1] && cad[k]!=cad[(k+1)% cad.length+1])
+        if(cad[k]!=cad[k-1] && cad[k]!=cad[k+1])
             return cad[k];
-        else if(cad[k]==cad[k+1])
-            return buscaUnicoAux(cad, i0, k); // I search in the left side
-        else
-            return buscaUnicoAux(cad, k+1, iN); // I search in the right side
+
+        if(cad[i0]==cad[iN]){
+            if(cad[k]==cad[k-1])
+                return buscaUnicoAux(cad, i0, k); // I search in the left side
+            else
+                return buscaUnicoAux(cad, k+1, iN); // I search in the right side
+        }
+        else{
+            if(cad[k]==cad[k-1])
+                return buscaUnicoAux(cad, k+1, iN); // I search in the right side
+            else
+                return buscaUnicoAux(cad, i0, k); // I search in the left side
+        }
     }
     public static void printArray(int[] cad){
         for (int i = 0; i < cad.length; i++) {
