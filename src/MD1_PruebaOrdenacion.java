@@ -9,7 +9,7 @@ public class MD1_PruebaOrdenacion extends auxiliaresArray{
                 System.out.println("Ordenacion por insercion: "); ordenar.ordenacion_por_insercion(array);
                 break;
             case 2:
-                System.out.println("Ordenacion por burbuja: "); ordenar.ordenacion_por_burbuja(array);
+                System.out.println("Ordenacion por burbuja: "); ordenar.ordenacion_por_burbuja_optimizado(array);
                 break;
             case 3:
                 System.out.println("Ordenacion por combsort: "); ordenar.combsort(array);
