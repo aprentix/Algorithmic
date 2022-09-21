@@ -18,7 +18,16 @@ public class Ordenar implements BasicosOrdenacion{
 
     @Override
     public void ordenacion_por_insercion(int[] numeros) {
-
+        // I consider that the first element is ordered
+        int auxiliar=0;
+        for(int i=1; i< numeros.length; i++){
+            j = i;
+            while(numeros[j]>numeros[i]){
+                numeros[j] = numeros[j-1];
+                j--;
+            }
+            numeros[i] = numeros[j];
+        }
     }
 
     @Override
