@@ -1,3 +1,6 @@
+package MD1;
+import Auxiliares.auxiliaresArray;
+
 public class MD1_PruebaOrdenacion extends auxiliaresArray{
     public static void seleccionarOrdenacion(int i, int[] array){
         Ordenar ordenar = new Ordenar();

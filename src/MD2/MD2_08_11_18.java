@@ -1,3 +1,5 @@
+package MD2;
+
 public class MD2_08_11_18 {
     // Find the number UNIQUE in an array (LOG N)
     public static int buscaUnico(int[] cad){

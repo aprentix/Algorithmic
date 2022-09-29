@@ -1,3 +1,5 @@
+package Auxiliares;
+
 import java.lang.Math;
 public class auxiliaresArray {
     public static void showArray(int[] cad){

@@ -1,4 +1,7 @@
-public class MD2_05_11_18 {
+package MD2;
+import Auxiliares.auxiliaresArray;
+
+public class MD2_05_11_18 extends auxiliaresArray{
     // Find the number minour in a array
     public static int buscaMenor(int[] cad){
         return buscaMenorAux(cad, 0, cad.length-1);
@@ -14,17 +17,12 @@ public class MD2_05_11_18 {
         else
             return buscaMenorAux(cad, k+1, iN);
     }
-    public static void printArray(int[] cad){
-        for (int i = 0; i < cad.length; i++) {
-            System.out.print(cad[i]+" ");
-        }
-        System.out.println();
-    }
+
     public static void main(String[] args) {
         int[] ejem1 = {5,6,7,8,2,3,4};
         int[] ejem2 = {2,3,4};
 
-        printArray(ejem2);
+        showArray(ejem2);
         System.out.println("Menor numero: " + buscaMenor(ejem1));
     }
 }
