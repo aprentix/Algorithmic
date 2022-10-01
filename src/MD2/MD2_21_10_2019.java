@@ -30,9 +30,13 @@ public class MD2_21_10_2019 extends auxiliaresArray{
         }
         else{
             int k = (int) Math.floor((i0+iN)/2);
-            if(vector[k]!=vector[k+1]&&vector[k]!=vector[k-1]||vector.length==1) return vector[k];
-            if(vector[k]==vector[k-1]) return elementoSolitarioAux(vector, k+1, iN);
-            else return elementoSolitarioAux(vector, i0,k-1);
+            if(vector[k]!=vector[k+1]&&vector[k]!=vector[k-1]) return vector[k];
+            else if(vector[k]==vector[k-1])
+                if(k%2==1) return elementoSolitarioAux(vector, k+1, iN);
+                else return elementoSolitarioAux(vector, i0,k-1);
+            else
+                if(k%2==0) return elementoSolitarioAux(vector, k+1, iN);
+                else return elementoSolitarioAux(vector, i0,k-1);
         }
     }
     public static void main(String[] args) {
@@ -46,6 +50,6 @@ public class MD2_21_10_2019 extends auxiliaresArray{
         System.out.println(resultado);
         int[] ejem1 = {5,5,6,6,7,7,8,8,2,3,3,4,4};
         showArray(ejem1);
-        elementoSolitario(ejem1);
+        System.out.println(elementoSolitario(ejem1));
     }
 }
