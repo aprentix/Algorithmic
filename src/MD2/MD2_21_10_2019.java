@@ -5,7 +5,7 @@ import Auxiliares.auxiliaresArray;
 public class MD2_21_10_2019 extends auxiliaresArray{
     // Input : unorganized vector
     // Output : sum of positive numbers in the array
-    // Complexit : N
+    // Complexity : N
     public static int sumaPositivos(int[] vector){
         return sumaPositivosAux(vector, 0, vector.length-1);
     }
