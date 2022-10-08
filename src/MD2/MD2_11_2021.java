@@ -5,12 +5,12 @@ public class MD2_11_2021 extends auxiliaresArray{
     public static int longMaxSubArrayOrdenado(int[] vector){
         return longMaxSubArrayOrdenadoAux(vector, 0, vector.length-1);
     }
-    public static int longArrayCentro(int[] vector, int k){
+    public static int longArrayCentro(int[] vector, int i0, int k, int iN){
         int i = k;
         int longitud = 1;
-        while(vector[i]>vector[i-1]) longitud++; i--;  // ampliamos a la izquierda
+        while(vector[i]>=vector[i-1]&&i>=i0) longitud++; i--;  // ampliamos a la izquierda
         i = k;
-        while(vector[i]<vector[i+1]) longitud++; i++;  // ampliamos a la derecha
+        while(vector[i]<=vector[i+1]&&i<=iN) longitud++; i++;  // ampliamos a la derecha
         return longitud;
     }
     public static int longMaxSubArrayOrdenadoAux(int[] vector, int i0, int iN){
@@ -22,7 +22,7 @@ public class MD2_11_2021 extends auxiliaresArray{
             // El debuger da problemas con longMaxSubArrayOrdenadoAux, no funciona
             int izquierda = longMaxSubArrayOrdenadoAux(vector, i0, k-1);
             int derecha = longMaxSubArrayOrdenadoAux(vector, k+1, iN);
-            int centro = longArrayCentro(vector, k);
+            int centro = longArrayCentro(vector, i0, k, iN);
 
             int mayor = izquierda>derecha?izquierda:derecha;
             return mayor>centro?mayor:centro;

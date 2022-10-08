@@ -7,9 +7,9 @@ public class MD2_07_11_2017 extends auxiliaresArray{
     }
     public static int elementoEspecialAux(int[] vector, int i0, int iN){
         if(i0==iN){
-            return i0;
-            //if(vector[i0]==i0) return i0; // Si tubiese un array de un elemento y este fuese != 0
-            //else return 0;
+            //return i0;
+            if(vector[i0]==i0) return i0; // Si tubiese un array de un elemento y este fuese != 0
+            else return -1; // El indice 0 El cero es una posicion valida en el array
         }
         else{
             int k = (i0+iN)/2;
@@ -20,8 +20,8 @@ public class MD2_07_11_2017 extends auxiliaresArray{
     }
     public static void main(String[] args) {
         int[] ordenados = {-10, -2, 0, 2, 7, 9, 19, 28, 30, 42, 55};
-        int[] aux = {-1, 2};
-        showArray(ordenados);
-        System.out.println(elementoEspecial(ordenados));
+        int[] aux = {-10};
+        showArray(aux);
+        System.out.println(elementoEspecial(aux));
     }
 }
